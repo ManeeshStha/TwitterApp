@@ -74,20 +74,10 @@ public class SplashScreen extends AppCompatActivity {
     }
 
     void CheckUser() {
-        SharedPreferences sharedPreferences = getSharedPreferences( "User", MODE_PRIVATE );
-        String username = sharedPreferences.getString( "username", "" );
-        String password = sharedPreferences.getString( "password", "" );
-        if(username.isEmpty()&&password.isEmpty()){
+
             Intent intent = new Intent( SplashScreen.this,MainActivity.class );
             startActivity( intent );
-            return;
-        }
-
-        Intent login = new Intent( SplashScreen.this,Login_activity.class );
-        login.putExtra( "email",username );
-        login.putExtra( "password",password );
-        startActivity( login );
-
+         
 
     }
 }
